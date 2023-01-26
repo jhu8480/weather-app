@@ -15,6 +15,10 @@ h1 {
   color: rgba(49, 47, 47, 0.8);
 }
 
+h5 {
+  color: rgba(49, 47, 47, 0.8);
+}
+
 .form-text {
   box-shadow: 1px 1px 3px 2px #dfdfdf;
   border: none;
@@ -24,6 +28,7 @@ h1 {
 
 .search-history li {
   font-size: 0.8rem;
+  font-style: italic;
   text-align: center;
   list-style-type: none;
   border: 0.3px solid rgba(49, 47, 47, 0.8);
@@ -32,6 +37,7 @@ h1 {
   margin-bottom: 5px;
   padding: 3px;
   cursor: pointer;
+  box-shadow: 2px 2px 0.5px 0.5px rgba(49, 47, 47, 0.25);
 }
 
 .search-history li:active {
@@ -41,8 +47,30 @@ h1 {
 
 .city-info {
   border: 01px solid black;
-  height: 35vh;
+  height: 25vh;
   min-height: 190px;
   color:rgba(49, 47, 47, 0.8);
   padding: 1rem;
+  border-radius: 3px;
+  box-shadow: 3px 3px 1px 1px rgba(49, 47, 47, 0.25);
+}
+
+
+.five-days-container {
+  display: flex;
+  justify-content: center;
+  column-gap: 15px;
+  flex-wrap: wrap;
+}
+
+.one-day {
+  width: 5rem;
+  height: 7rem;
+  border: 0.3px solid rgba(49, 47, 47, 0.8);
+  flex: 1 1 120px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  padding: 3px;
+  cursor: pointer;
+  box-shadow: 2px 2px 0.5px 0.5px rgba(49, 47, 47, 0.25);
 }
