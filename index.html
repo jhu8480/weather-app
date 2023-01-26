@@ -27,11 +27,12 @@
     </div>
   </header>
 
+  <hr>
   <main>
     <div class="container mt-3">
       <div class="row">
 
-        <div class="col-md-4">
+        <div class="col-sm-4">
           <form>
             <label for="search-input">
               <h5>Search for a City:</h5>
@@ -40,14 +41,22 @@
             <button type="submit" class="btn btn-outline-dark mt-2 w-100" id="search-button">Search</button>
           </form>
           <hr>
-          <div>
-            <ul id="search-history">
+          <div class="mt-2">
+            <ul id="search-history" class="search-history">
+              <li>Shanghai</li>
+              <li>Hangzhou</li>
+              <li>Lishui</li>
             </ul>
           </div>
         </div>
 
         <div class="col-8">
-
+          <div id="city-info" class="city-info">
+            <h4 id="city-name">City Name</h4>
+            <p id="city-temp">Temperature:</p>
+            <p id="city-wind">Wind:</p>
+            <p id="city-humidity">Humidity:</p>
+          </div>
         </div>
 
       </div>

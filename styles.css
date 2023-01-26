@@ -8,12 +8,11 @@ body {
 
 .header {
   font-family: "Poppins", sans-serif;
-
 }
 
 h1 {
   font-size: 2.2rem;
-  color: rgba(49, 47, 47, 0.8)
+  color: rgba(49, 47, 47, 0.8);
 }
 
 .form-text {
@@ -21,4 +20,29 @@ h1 {
   border: none;
   border-radius: 5px;
   padding: 0.4rem;
+}
+
+.search-history li {
+  font-size: 0.8rem;
+  text-align: center;
+  list-style-type: none;
+  border: 0.3px solid rgba(49, 47, 47, 0.8);
+  margin-left: -2rem;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.search-history li:active {
+  color: white;
+  background-color: #1D976C;
+}
+
+.city-info {
+  border: 01px solid black;
+  height: 35vh;
+  min-height: 190px;
+  color:rgba(49, 47, 47, 0.8);
+  padding: 1rem;
 }
