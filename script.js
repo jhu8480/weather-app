@@ -11,14 +11,15 @@ searchBtn.on('click', function(e) {
   renderSearchHistory();
 });
 
-renderWeather('Shanghai');
-renderFiveDays('Shanghai');
+renderWeather('Toronto');
+renderFiveDays('Toronto');
 renderSearchHistory();
 
 async function getCityGeoLocation(cityname) {
   try {
     const cityData = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${cityname}&limit=10&appid=3ee036a4b94af4c4f30dba029d912c48`);
     const response = await cityData.json();
+    console.log(response[0]);
     const result = {
       cityname: response[0].name,
       latitude: response[0].lat,
@@ -36,6 +37,7 @@ async function getWeatherBylocation(cityname) {
     const geoLocation = await getCityGeoLocation(cityname);
     const weatherData = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${geoLocation.latitude}&lon=${geoLocation.longitude}&units=metric&appid=3ee036a4b94af4c4f30dba029d912c48`);
     const response = await weatherData.json();
+    console.log(response);
     return {data: response, name: geoLocation.cityname};
   } catch(e) {
     console.log(e);
@@ -49,7 +51,8 @@ async function renderWeather(searchInput) {
   if (weatherData) {
     const dataList = weatherData.data.list;
     $('#city-name').text(`${weatherData.name}  ${getCurrentTime(time)}`);
-    $('#city-temp').text(`Temperatuere: ${dataList[0].main.temp} °C`);
+    $('.weather-icon').attr('src', `https://openweathermap.org/img/wn/${dataList[0].weather[0].icon}@2x.png`);
+    $('#city-temp').text(`Temperature: ${dataList[0].main.temp} °C`);
     $('#city-wind').text(`Wind: ${dataList[0].wind.speed} m/s`);
     $('#city-humidity').text(`Humidity: ${dataList[0].main.humidity}%`);
     $('#city-feels-like').text(`Feels like: ${dataList[0].main.feels_like} °C`);
@@ -63,7 +66,7 @@ async function renderFiveDays(searchInput) {
   let j = 0;
   
   for (let i = 0; i < fiveDaysDiv.length; i++) {
-    fiveDaysDiv[i].innerHTML = `<h6>${getCurrentTime(response.list[j].dt_txt)}</h6><p>Temp: ${response.list[j].main.temp} °C<p> <p>Wind: ${response.list[j].wind.speed} m/s</p> <p>Humidity: ${response.list[j].main.humidity}%</p>`;
+    fiveDaysDiv[i].innerHTML = `<h6 style="display: inline;">${getCurrentTime(response.list[j].dt_txt)}</h6><img class="weather-icon", src="https://openweathermap.org/img/wn/${response.list[j].weather[0].icon}@2x.png"><p>Temp: ${response.list[j].main.temp} °C<p> <p>Wind: ${response.list[j].wind.speed} m/s</p> <p>Humidity: ${response.list[j].main.humidity}%</p>`;
     j += 8;
   }
 }
@@ -160,7 +163,10 @@ $( function() {
     "Dublin",
     "Stockholm",
     "Warsaw",
-    "Cairo"
+    "Cairo",
+    "Kyoto",
+    "Nagasaki",
+    "Lindsay"
   ];
   $( "#search-input" ).autocomplete({
     source: availableTags

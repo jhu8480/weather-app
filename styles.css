@@ -47,7 +47,7 @@ main {
 }
 
 .search-history li:active {
-  color: white;
+  color: rgb(127, 118, 118);
   background-color: #1D976C;
 }
 
@@ -56,7 +56,8 @@ main {
   border: 01px solid black;
   height: 25vh;
   min-height: 210px;
-  color:rgba(49, 47, 47, 0.8);
+  background-color: rgb(131, 123, 123);
+  color: rgb(238, 226, 226);
   padding: 1rem;
   border-radius: 3px;
   box-shadow: 3px 3px 1px 1px rgba(49, 47, 47, 0.25);
@@ -82,8 +83,8 @@ main {
   padding: 3px;
   cursor: pointer;
   box-shadow: 2px 2px 0.5px 0.5px rgba(49, 47, 47, 0.25);
-  background-color: #f8f5f5;
-  color: rgba(49, 47, 47, 0.8);
+  background-color: rgb(131, 123, 123);
+  color: rgb(238, 226, 226);
 }
 
 
@@ -132,4 +133,15 @@ footer {
   align-items: center;
   color: rgba(49, 47, 47, 0.8);
   position: relative;
+}
+
+.weather-icon {
+  display: inline;
+  height: 2rem;
+  width: 2rem;
+  object-fit: cover;
+}
+
+#city-name {
+  display: inline;
 }
