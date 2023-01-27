@@ -55,9 +55,9 @@ main {
 .city-info {
   border: 01px solid black;
   height: 25vh;
-  min-height: 210px;
-  background-color: rgb(131, 123, 123);
-  color: rgb(238, 226, 226);
+  min-height: 240px;
+  background-color: rgb(169, 161, 161);
+  color: white;
   padding: 1rem;
   border-radius: 3px;
   box-shadow: 3px 3px 1px 1px rgba(49, 47, 47, 0.25);
@@ -83,8 +83,8 @@ main {
   padding: 3px;
   cursor: pointer;
   box-shadow: 2px 2px 0.5px 0.5px rgba(49, 47, 47, 0.25);
-  background-color: rgb(131, 123, 123);
-  color: rgb(238, 226, 226);
+  background-color: rgb(169, 161, 161);
+  color: white;
 }
 
 
@@ -137,8 +137,8 @@ footer {
 
 .weather-icon {
   display: inline;
-  height: 2rem;
-  width: 2rem;
+  height: 2.2rem;
+  width: 2.2rem;
   object-fit: cover;
 }
 
