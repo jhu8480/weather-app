@@ -17,7 +17,7 @@ renderSearchHistory();
 
 async function getCityGeoLocation(cityname) {
   try {
-    const cityData = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityname}&limit=10&appid=3ee036a4b94af4c4f30dba029d912c48`);
+    const cityData = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${cityname}&limit=10&appid=3ee036a4b94af4c4f30dba029d912c48`);
     const response = await cityData.json();
     const result = {
       cityname: response[0].name,
