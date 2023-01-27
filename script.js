@@ -3,10 +3,11 @@ searchBtn.on('click', function(e) {
   e.preventDefault();
   const searchInput = $('#search-input').val();
   renderWeather(searchInput);
+  renderFiveDays(searchInput);
 });
 
-renderWeather('Toronto');
-getCurrentTime(); // TODO: Delete this later
+renderWeather('Shanghai');
+renderFiveDays('Shanghai');
 
 async function getCityGeoLocation(cityname) {
   try {
@@ -20,7 +21,8 @@ async function getCityGeoLocation(cityname) {
     console.log(result); // TODO: remove console.log
     return result;
   } catch(e) {
-    console.log(e); //TODO: handle error
+    console.log(e);
+    console.log('Cannot find this city');
   }
 }
 
@@ -32,7 +34,8 @@ async function getWeatherBylocation(cityname) {
     console.log(response); // TODO: remove console.log
     return {data: response, name: geoLocation.cityname};
   } catch(e) {
-    console.log(e); //TODO: handle error
+    console.log(e);
+    $('#city-info').html('<h2>There seems something went wrong, please try again</h2>');
   }
 }
 
@@ -46,8 +49,19 @@ async function renderWeather(searchInput) {
     $('#city-wind').text(`Wind: ${dataList[0].wind.speed} m/s`);
     $('#city-humidity').text(`Humidity: ${dataList[0].main.humidity}%`);
     $('#city-feels-like').text(`Feels like: ${dataList[0].main.feels_like} °C`);
-  } else {
-    $('#city-info').html('<h2>Something went wrong, try again</h2>');
+  }
+}
+
+async function renderFiveDays(searchInput) {
+  const weatherData = await getWeatherBylocation(searchInput);
+  const response = await weatherData.data;
+  const fiveDaysDiv = $('.one-day');
+  console.log(fiveDaysDiv[0]); // TODO: remove this;
+  let j = 0;
+  
+  for (let i = 0; i < fiveDaysDiv.length; i++) {
+    fiveDaysDiv[i].innerHTML = `<h6>${getCurrentTime(response.list[j].dt_txt)}</h6><p>Temp: ${response.list[j].main.temp} °C<p> <p>Wind: ${response.list[j].wind.speed} m/s</p> <p>Humidity: ${response.list[j].main.humidity}%</p>`;
+    j += 8;
   }
 }
 

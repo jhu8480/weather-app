@@ -45,6 +45,10 @@ h5 {
   background-color: #1D976C;
 }
 
+p.tip {
+  font-size: 0.5rem;
+}
+
 .city-info {
   border: 01px solid black;
   height: 25vh;
@@ -74,4 +78,16 @@ h5 {
   padding: 3px;
   cursor: pointer;
   box-shadow: 2px 2px 0.5px 0.5px rgba(49, 47, 47, 0.25);
+  background-color: #f8f5f5;
+  color: rgba(49, 47, 47, 0.8);
+}
+
+
+.one-day h6 {
+  font-size: 0.9rem;
+}
+
+.one-day p {
+  font-size: 0.8rem;
+  margin: 3px;
 }
