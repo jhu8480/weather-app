@@ -16,7 +16,7 @@
 
 <body>
   <header class="header">
-    <div class="container p-1 mt-2">
+    <div class="container p-1">
       <div class="row">
         <div class="col-sm-7">
         </div>
@@ -27,7 +27,6 @@
     </div>
   </header>
 
-  <hr>
   <main>
     <div class="container mt-3">
       <div class="row">
@@ -41,6 +40,7 @@
             <button type="submit" class="btn btn-outline-dark mt-2 w-100" id="search-button">Search</button>
           </form>
           <hr>
+          <h7>Search history: </h7>
           <div class="mt-2">
             <ul id="search-history" class="search-history">
               <li>Shanghai</li>
@@ -56,6 +56,7 @@
             <p id="city-temp">Temperature:</p>
             <p id="city-wind">Wind:</p>
             <p id="city-humidity">Humidity:</p>
+            <p id="city-feels-like">Feels like:</p>
           </div>
 
           <h5 class="mt-3">5-day Forecast</h5>
@@ -75,11 +76,11 @@
 
 
 
-
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
     crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
   <script src="./script.js"></script>
 </body>
 

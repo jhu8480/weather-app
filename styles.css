@@ -1,13 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400&family=Roboto+Condensed:wght@300;400;700&display=swap');
 
-body {
-  background: #1D976C;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #93F9B9, #1D976C);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #93F9B9, #1D976C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
 
 .header {
   font-family: "Poppins", sans-serif;
+  background-color: #dfdfdf;
 }
 
 h1 {
@@ -24,6 +20,10 @@ h5 {
   border: none;
   border-radius: 5px;
   padding: 0.4rem;
+}
+
+.btn:hover {
+  background-color: rgba(49, 47, 47, 0.8);
 }
 
 .search-history li {
@@ -48,7 +48,7 @@ h5 {
 .city-info {
   border: 01px solid black;
   height: 25vh;
-  min-height: 190px;
+  min-height: 210px;
   color:rgba(49, 47, 47, 0.8);
   padding: 1rem;
   border-radius: 3px;
@@ -62,6 +62,7 @@ h5 {
   column-gap: 15px;
   flex-wrap: wrap;
 }
+
 
 .one-day {
   width: 5rem;
