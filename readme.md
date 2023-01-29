@@ -19,4 +19,4 @@ Here's the screenshot of the page
 
 ## Link to deployed page
 
-Link: https://github.com/jhu8480/weather-app
+Link: https://github.io/jhu8480/weather-app
